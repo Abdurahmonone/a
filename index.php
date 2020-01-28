@@ -15,10 +15,6 @@
         $name = $mysqli->real_escape_string(htmlspecialchars($_POST['name']));
         $email = $mysqli->real_escape_string(htmlspecialchars($_POST['email']));
         $password = $mysqli->real_escape_string(htmlspecialchars($_POST['password']));
-        $ip_reg = ip2long($_SERVER['REMOTE_ADDR']);
-        $query = "INSERT INTO `secret_users`
-        (`name`, `email`, `password`, `ip_reg`, `date_reg`)
-        VALUES ('$name', '$email', MD5('$password'), '$ip_reg', UNIX_TIMESTAMP())";
         $result = $mysqli->query($query);
     }
     
